@@ -5,7 +5,7 @@
       class="settings__timers"
     >
       <div class="settings__element">
-        <h2 class="settings__name">Sesión</h2>
+        <h2 class="settings__name">Session</h2>
         <settings-control
           @change="SET_SESSION_DURATION"
           :value="sessionTimer"
@@ -23,7 +23,7 @@
         />
       </div>
       <div class="settings__element">
-        <h2 class="settings__name">Break largo</h2>
+        <h2 class="settings__name">Long Break</h2>
         <settings-control
           @change="SET_LONG_BREAK_DURATION"
           :value="longBreakTimer"
