@@ -1,6 +1,6 @@
 {
-  "name": "pomodoro-pwa",
-  "short_name": "PomPWA",
+  "name": "Pomodoro",
+  "short_name": "Pomodoro",
   "icons": [
     {
       "src": "/img/icons/android-chrome-192x192.png",
@@ -16,6 +16,6 @@
   "start_url": "/index.html",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#F44336",
-  "theme_color": "#F44336"
+  "background_color": "#000000",
+  "theme_color": "#000000"
 }

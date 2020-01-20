@@ -8,12 +8,10 @@
     <timer-history/>
   </div>
 </template>
-
 <script>
 import TimerControls from './TimerControls'
 import TimerHistory from './TimerHistory'
 import TimerTitle from './TimerTitle'
-
 export default {
   name: 'timer',
   components: {
@@ -27,7 +25,6 @@ export default {
   }
 }
 </script>
-
 <style lang="scss" scoped>
 .timer {
   height: 100%;
@@ -38,13 +35,11 @@ export default {
   align-items: end;
   padding-top: 2rem;
 }
-
 .progress {
   max-width: 35rem;
   width: 80%;
   background-color: transparent;
 }
-
 .timer--landscape {
   padding-top: 0;
   display: grid;
@@ -52,7 +47,6 @@ export default {
   grid-template-rows: 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
-
   .progress {
     grid-row: 1 / -1;
     width: 80%;

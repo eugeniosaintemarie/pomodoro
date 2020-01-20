@@ -1,7 +1,6 @@
 <template>
   <h2 class="task">{{ task }}</h2>
 </template>
-
 <script>
 export default {
   computed: {
@@ -11,7 +10,6 @@ export default {
   }
 }
 </script>
-
 <style lang="scss" scoped>
 .task {
   font-size: 2rem;

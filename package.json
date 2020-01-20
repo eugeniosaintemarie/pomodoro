@@ -1,6 +1,6 @@
 {
-  "name": "pomodoro-pwa",
-  "version": "0.1.0",
+  "name": "Pomodoro",
+  "version": "1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

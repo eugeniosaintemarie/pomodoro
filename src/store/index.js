@@ -1,24 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import ProgressBar from 'progressbar.js'
-
 Vue.use(Vuex)
-
 function convertSecsToTimerString (secs) {
   const min = Math.floor(secs / 60)
   const sec = secs % 60
-
   let secString
-
   if (sec < 10) {
     secString = '0' + sec
   } else {
     secString = sec
   }
-
   return `${min}:${secString}`
 }
-
 function displayNotification (activity) {
   let body
   switch (activity) {
@@ -32,7 +26,6 @@ function displayNotification (activity) {
       body = 'Pomodoro finished!'
       break
   }
-
   navigator.serviceWorker.ready.then(function (registration) {
     registration.showNotification(`${activity} ended.`, {
       body,
@@ -40,7 +33,6 @@ function displayNotification (activity) {
     })
   })
 }
-
 export default new Vuex.Store({
   state: {
     activeTimer: 'sessionTimer',
@@ -57,7 +49,6 @@ export default new Vuex.Store({
     pomodoroCount: 4,
     testMode: false
   },
-
   mutations: {
     CALCULATE_STEP (state) {
       if (state.activeTimer === 'sessionTimer') {
@@ -68,15 +59,12 @@ export default new Vuex.Store({
         state.step = 1 / state.longBreakTimer
       }
     },
-
     SET_PROGRESS (state, value) {
       state.progress = value
     },
-
     SET_PAUSE_STATE (state, value) {
       state.paused = value
     },
-
     DRAW_TIMER (state) {
       state.circle = new ProgressBar.Circle(state.canvasContainer, {
         color: '#fff',
@@ -104,23 +92,18 @@ export default new Vuex.Store({
         state.circle.setText(convertSecsToTimerString(state.secLeft + 1))
       }
     },
-
     SET_SESSION_DURATION (state, value) {
       state.sessionTimer = value
     },
-
     SET_BREAK_DURATION (state, value) {
       state.breakTimer = value
     },
-
     SET_LONG_BREAK_DURATION (state, value) {
       state.longBreakTimer = value
     },
-
     SET_TIME_LEFT (state, value) {
       state.secLeft = value
     },
-
     SET_INTERVAL (state, value) {
       if (value) {
         state.interval = value
@@ -129,41 +112,33 @@ export default new Vuex.Store({
         state.interval = null
       }
     },
-
     SET_ACTIVE_TIMER (state, value) {
       state.activeTimer = value
     },
-
     SET_CANVAS_CONTAINER (state, element) {
       state.canvasContainer = element
     },
-
     SET_POMODORO_COUNT (state, value) {
       state.pomodoroCount = value
     },
-
     SET_TEST_MODE (state, value) {
       state.testMode = value
     }
   },
-
   actions: {
     animateTimer ({ commit, state, dispatch, getters }) {
       if (state.pomodoroCount === 0 && state.activeTimer === 'sessionTimer') {
         return dispatch('resetTimer')
       }
-
       if (!state.interval) {
         commit('CALCULATE_STEP')
         dispatch('activateTimer')
-
         commit(
           'SET_INTERVAL',
           setInterval(() => {
             commit('SET_PROGRESS', state.progress + state.step)
             commit('SET_TIME_LEFT', state.secLeft - 1)
             state.circle.setText(convertSecsToTimerString(state.secLeft + 1))
-
             if (state.secLeft < 0) {
               displayNotification(getters.task)
               // const sound = new Audio(audio)
@@ -182,10 +157,8 @@ export default new Vuex.Store({
               ) {
                 commit('SET_ACTIVE_TIMER', 'sessionTimer')
               }
-
               return dispatch('animateTimer')
             }
-
             state.circle.animate(state.progress, {
               duration: 1000
             })
@@ -193,7 +166,6 @@ export default new Vuex.Store({
         )
       }
     },
-
     resetTimer ({ commit, state }) {
       state.circle.destroy()
       commit('SET_INTERVAL', null)
@@ -203,7 +175,6 @@ export default new Vuex.Store({
       commit('SET_ACTIVE_TIMER', 'sessionTimer')
       commit('DRAW_TIMER')
     },
-
     activateTimer ({ commit, state }) {
       if (state.activeTimer === 'sessionTimer' && !state.paused) {
         commit('SET_PROGRESS', 0)
@@ -218,15 +189,12 @@ export default new Vuex.Store({
       commit('SET_PAUSE_STATE', false)
       state.circle.set(state.progress)
     },
-
     pauseTimer ({ commit }) {
       commit('SET_INTERVAL', null)
       commit('SET_PAUSE_STATE', true)
     },
-
     setTestMode ({ commit }, value) {
       commit('SET_TEST_MODE', value)
-
       if (value) {
         commit('SET_SESSION_DURATION', 5)
         commit('SET_BREAK_DURATION', 2)
@@ -238,7 +206,6 @@ export default new Vuex.Store({
       }
     }
   },
-
   getters: {
     pomodoroHistory (state) {
       let arr = []
@@ -249,14 +216,11 @@ export default new Vuex.Store({
           arr.push(true)
         }
       }
-
       return arr
     },
-
     isFreshTimer (state) {
       return state.paused === null
     },
-
     task (state) {
       switch (state.activeTimer) {
         case 'sessionTimer':

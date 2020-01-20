@@ -4,21 +4,17 @@
     <router-view/>
   </div>
 </template>
-
 <script>
 import AppNav from '@/components/AppNav'
-
 export default {
   components: {
     AppNav
   }
 }
 </script>
-
 <style lang="scss">
 @import "sass/_base";
 @import "sass/_typography";
-
 body {
   display: flex;
   justify-content: center;
@@ -28,7 +24,6 @@ body {
   overflow: hidden;
 }
 </style>
-
 <style lang="scss" scoped>
 .app {
   height: 100vh;
@@ -36,7 +31,6 @@ body {
   max-height: 90rem;
   max-width: 70rem;
   background-color: $color-primary;
-
   display: grid;
   grid-template-rows: 5rem 1fr;
 }

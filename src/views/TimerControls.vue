@@ -17,10 +17,8 @@
     </base-round-button>
   </div>
 </template>
-
 <script>
 import BaseRoundButton from '@/components/BaseRoundButton'
-
 export default {
   components: {
     BaseRoundButton
@@ -37,7 +35,6 @@ export default {
   }
 }
 </script>
-
 <style lang="scss" scoped>
 .timer-controls {
   width: 100%;
@@ -46,7 +43,6 @@ export default {
   grid-column-gap: 3rem;
   justify-content: center;
 }
-
 .icon {
   height: 2.7rem;
   width: 2.7rem;

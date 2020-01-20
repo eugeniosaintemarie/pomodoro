@@ -5,5 +5,4 @@ workbox.routing.registerRoute(
     cacheName: 'google-fonts'
   })
 )
-
 workbox.precaching.precacheAndRoute(self.__precacheManifest || [])

@@ -5,7 +5,7 @@
       class="settings__timers"
     >
       <div class="settings__element">
-        <h2 class="settings__name">Session</h2>
+        <h2 class="settings__name">Sesión</h2>
         <settings-control
           @change="SET_SESSION_DURATION"
           :value="sessionTimer"
@@ -14,7 +14,7 @@
         />
       </div>
       <div class="settings__element">
-        <h2 class="settings__name">Short Break</h2>
+        <h2 class="settings__name">Break</h2>
         <settings-control
           @change="SET_BREAK_DURATION"
           :value="breakTimer"
@@ -23,7 +23,7 @@
         />
       </div>
       <div class="settings__element">
-        <h2 class="settings__name">Long Break</h2>
+        <h2 class="settings__name">Break largo</h2>
         <settings-control
           @change="SET_LONG_BREAK_DURATION"
           :value="longBreakTimer"
@@ -32,6 +32,7 @@
         />
       </div>
     </div>
+    <!--
     <p
       v-if="testMode"
       class="settings__text"
@@ -48,13 +49,12 @@
         class="settings__button"
       >Quit test mode</button>
     </div>
+    -->
   </div>
 </template>
-
 <script>
 import SettingsControl from './SettingsControl'
 import { mapState, mapMutations } from 'vuex'
-
 export default {
   components: {
     SettingsControl
@@ -86,20 +86,17 @@ export default {
   }
 }
 </script>
-
 <style lang="scss" scoped>
 .settings {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   &__element {
     margin-top: 5rem;
     @media (max-height: 700px) {
       margin-top: 4rem;
     }
   }
-
   &__text {
     color: #fff;
     font-size: 2rem;
@@ -107,7 +104,6 @@ export default {
     padding: 0 2rem;
     text-align: center;
   }
-
   &__name {
     color: #fff;
     font-size: 2.5rem;
@@ -115,12 +111,10 @@ export default {
     line-height: 1;
     text-align: center;
     margin-bottom: -1.5rem;
-
     @media (max-height: 600px) {
       margin-bottom: -1rem;
     }
   }
-
   &__button {
     background-color: transparent;
     color: #fff;
@@ -130,7 +124,6 @@ export default {
     outline: none;
     transition: all .3s;
     cursor: pointer;
-
     &:hover {
       background-color: #fff;
       color: $color-primary;

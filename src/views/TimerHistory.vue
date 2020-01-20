@@ -5,10 +5,8 @@
     </div>
   </transition>
 </template>
-
 <script>
 import { mapGetters } from 'vuex'
-
 export default {
   computed: {
     ...mapGetters([
@@ -18,7 +16,6 @@ export default {
   }
 }
 </script>
-
 <style lang="scss" scoped>
 .history {
   display: flex;
@@ -27,18 +24,15 @@ export default {
   justify-content: space-around;
   align-items: center;
 }
-
 .circle {
   height: 3rem;
   width: 3rem;
   border: 2px solid #fff;
   border-radius: 50%;
-
   &--full {
     background-color: #fff;
   }
 }
-
 .slide-enter-active, .slide-leave-active {
   transition: all .3s ease-out;
 }

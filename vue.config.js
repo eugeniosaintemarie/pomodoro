@@ -1,5 +1,4 @@
 const path = require('path')
-
 module.exports = {
   chainWebpack: (config) => {
     config
@@ -15,7 +14,6 @@ module.exports = {
         })
         return options
       })
-
     config
       .module
       .rule('scss')
@@ -25,7 +23,6 @@ module.exports = {
         resources: path.resolve('./src/sass/_variables.scss')
       })
   },
-
   pwa: {
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {

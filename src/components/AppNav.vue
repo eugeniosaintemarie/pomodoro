@@ -12,7 +12,6 @@
     </router-link>
   </nav>
 </template>
-
 <script>
 export default {
   data () {
@@ -22,12 +21,10 @@ export default {
   }
 }
 </script>
-
 <style lang="scss" scoped>
 .nav {
   display: flex;
   background-color: transparent;
-
   &__link {
     flex: 1 0;
     display: flex;
@@ -36,19 +33,16 @@ export default {
     font-size: 1.4rem;
     border-bottom: 1px solid rgba(#fff, .1);
     cursor: pointer;
-
     &:not(:last-child) {
       border-right: 1px solid rgba(#fff, .1);
     }
   }
-
   &__icon {
     height: 3rem;
     width: 3rem;
     fill: rgba(#000, .1);
   }
 }
-
 .router-link-exact-active {
   .nav__icon {
     fill: #fff;
