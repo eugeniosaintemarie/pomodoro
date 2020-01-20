@@ -32,7 +32,6 @@
         />
       </div>
     </div>
-    <!--
     <p
       v-if="testMode"
       class="settings__text"
@@ -49,7 +48,6 @@
         class="settings__button"
       >Quit test mode</button>
     </div>
-    -->
   </div>
 </template>
 <script>
