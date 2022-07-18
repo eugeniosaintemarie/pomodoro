@@ -58,7 +58,7 @@ export default {
     }
   }
   &__btn:disabled &__icon {
-    fill: rgba(rgb(125, 125, 125), .1);
+    fill: #607D8B;
   }
   &__btn:disabled:hover {
     background-color: transparent;
