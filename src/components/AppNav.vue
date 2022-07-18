@@ -40,7 +40,7 @@ export default {
   &__icon {
     height: 3rem;
     width: 3rem;
-    fill: rgba(rgb(0, 0, 0), .1);
+    fill: #607D8B;
   }
 }
 .router-link-exact-active {
