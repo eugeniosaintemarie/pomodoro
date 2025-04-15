@@ -19,10 +19,10 @@ function displayNotification (activity) {
     case 'Session':
       body = 'Time for a break!'
       break
-    case 'Short Break':
+    case 'Short break':
       body = 'Time to work!'
       break
-    case 'Long Break':
+    case 'Long break':
       body = 'Pomodoro finished!'
       break
   }
@@ -226,9 +226,9 @@ export default new Vuex.Store({
         case 'sessionTimer':
           return 'Session'
         case 'breakTimer':
-          return 'Short Break'
+          return 'Short break'
         case 'longBreakTimer':
-          return 'Long Break'
+          return 'Long break'
       }
     }
   }
